@@ -16,7 +16,7 @@ const (
 type workload []string
 
 func BenchmarkAll(b *testing.B) {
-	dict := words.LoadDict("/usr/share/dict/words")
+	dict := words.Load("/usr/share/dict/words", kLen)
 	work := fakeWorkload(1 << 13)
 	for _, s := range kAllSolvers {
 		s.Init(dict)
